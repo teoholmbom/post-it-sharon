@@ -4,7 +4,7 @@
         <ul>
             {% for food in foods %}
                 <li>
-                    <p><b>{{ food.name }}</b> {{ food.energy }} kcal</p>
+                    <p><b>{{ food.name }}</b> {{ food.energy }} kcal, {{ food.origin }}</p>
                     <p>{{ food.fact }}</p>
                 </li>
             {% endfor %}
@@ -12,13 +12,13 @@
     </div>
 
     <div>
-        <form action="{{ url_for('foods') }}" method="post">
+        <form action="{{ url_for('add_food') }}" method="post">
             Name:<br>
             <input type="text" name="name" value=""><br>
             Energy:<br>
             <input type="text" name="energy" value=""><br>
             Origin:<br>
-            <input type="text" name="energy" value=""><br>
+            <input type="text" name="origin" value=""><br>
             Fact<br>
             <input type="text" name="fact" value=""><br><br>
             <input type="submit" value="Submit">
